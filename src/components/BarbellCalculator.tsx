@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BarbellVisualization from "./BarbellVisualization";
 
 type Unit = "kg" | "lbs";
@@ -12,12 +12,44 @@ interface Plate {
   color: string;
 }
 
+interface RecentCalculation {
+  id: string;
+  targetWeight: string;
+  unit: Unit;
+  barType: BarType;
+  plates: Plate[];
+  timestamp: number;
+}
+
 export default function BarbellCalculator() {
   const [unit, setUnit] = useState<Unit>("kg");
   const [targetWeight, setTargetWeight] = useState<string>("");
   const [barType, setBarType] = useState<BarType>("male");
   const [plates, setPlates] = useState<Plate[]>([]);
   const [showResult, setShowResult] = useState(false);
+  const [recentCalculations, setRecentCalculations] = useState<
+    RecentCalculation[]
+  >([]);
+
+  // Load recent calculations from localStorage on component mount
+  useEffect(() => {
+    const saved = localStorage.getItem("optimalPlates_recentCalculations");
+    if (saved) {
+      try {
+        setRecentCalculations(JSON.parse(saved));
+      } catch (error) {
+        console.error("Error loading recent calculations:", error);
+      }
+    }
+  }, []);
+
+  // Save recent calculations to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem(
+      "optimalPlates_recentCalculations",
+      JSON.stringify(recentCalculations)
+    );
+  }, [recentCalculations]);
 
   const calculatePlates = (weight: number, unit: Unit, barType: BarType) => {
     // Standard Olympic bar weights
@@ -65,6 +97,64 @@ export default function BarbellCalculator() {
     return result;
   };
 
+  const addToRecentCalculations = (
+    targetWeight: string,
+    unit: Unit,
+    barType: BarType,
+    plates: Plate[]
+  ) => {
+    const newCalculation: RecentCalculation = {
+      id: Date.now().toString(),
+      targetWeight,
+      unit,
+      barType,
+      plates,
+      timestamp: Date.now(),
+    };
+
+    // Add to beginning of array and keep only last 10 calculations
+    const updated = [
+      newCalculation,
+      ...recentCalculations.filter(
+        (calc) =>
+          !(
+            calc.targetWeight === targetWeight &&
+            calc.unit === unit &&
+            calc.barType === barType
+          )
+      ),
+    ].slice(0, 10);
+
+    setRecentCalculations(updated);
+  };
+
+  const loadRecentCalculation = (calculation: RecentCalculation) => {
+    setTargetWeight(calculation.targetWeight);
+    setUnit(calculation.unit);
+    setBarType(calculation.barType);
+    setPlates(calculation.plates);
+    setShowResult(true);
+  };
+
+  const clearRecentCalculations = () => {
+    setRecentCalculations([]);
+  };
+
+  const formatTimestamp = (timestamp: number) => {
+    const date = new Date(timestamp);
+    const now = new Date();
+    const diffInHours = (now.getTime() - date.getTime()) / (1000 * 60 * 60);
+
+    if (diffInHours < 1) {
+      const diffInMinutes = Math.floor(diffInHours * 60);
+      return `${diffInMinutes}m ago`;
+    } else if (diffInHours < 24) {
+      return `${Math.floor(diffInHours)}h ago`;
+    } else {
+      return date.toLocaleDateString();
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const weight = parseFloat(targetWeight);
@@ -72,6 +162,7 @@ export default function BarbellCalculator() {
       const calculatedPlates = calculatePlates(weight, unit, barType);
       setPlates(calculatedPlates);
       setShowResult(true);
+      addToRecentCalculations(targetWeight, unit, barType, calculatedPlates);
     }
   };
 
@@ -209,6 +300,61 @@ export default function BarbellCalculator() {
           Calculate Plates
         </button>
       </form>
+
+      {/* Recent Calculations */}
+      {recentCalculations.length > 0 && (
+        <div className="mt-6 pt-6 border-t border-white/20">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-lg font-semibold text-white">
+              Recent Calculations
+            </h3>
+            <button
+              onClick={clearRecentCalculations}
+              className="text-red-400 hover:text-red-300 text-sm font-medium transition-colors"
+            >
+              Clear All
+            </button>
+          </div>
+          <div className="space-y-2 max-h-48 overflow-y-auto">
+            {recentCalculations.map((calculation) => (
+              <button
+                key={calculation.id}
+                onClick={() => loadRecentCalculation(calculation)}
+                className="w-full text-left p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors group"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-white font-medium">
+                      {calculation.targetWeight} {calculation.unit}
+                    </div>
+                    <div className="text-gray-400 text-sm">
+                      {calculation.barType === "male"
+                        ? "Male Olympic"
+                        : "Female Olympic"}{" "}
+                      • {formatTimestamp(calculation.timestamp)}
+                    </div>
+                  </div>
+                  <div className="text-gray-400 group-hover:text-white transition-colors">
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
