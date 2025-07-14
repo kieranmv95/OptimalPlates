@@ -1,4 +1,4 @@
-import BarbellCalculator from "@/components/BarbellCalculator";
+import BarbellCalculatorWrapper from "@/components/BarbellCalculatorWrapper";
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <BarbellCalculator />
+            <BarbellCalculatorWrapper />
           </div>
         </div>
       </div>
