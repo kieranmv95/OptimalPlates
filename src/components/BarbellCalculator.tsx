@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import BarbellVisualization from "./BarbellVisualization";
 
 type Unit = "kg" | "lbs";
@@ -22,6 +23,9 @@ interface RecentCalculation {
 }
 
 export default function BarbellCalculator() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
   const [unit, setUnit] = useState<Unit>("kg");
   const [targetWeight, setTargetWeight] = useState<string>("");
   const [barType, setBarType] = useState<BarType>("male");
@@ -50,6 +54,30 @@ export default function BarbellCalculator() {
       JSON.stringify(recentCalculations)
     );
   }, [recentCalculations]);
+
+  // Check URL parameters on mount and when they change
+  useEffect(() => {
+    const weight = searchParams.get("weight");
+    const unitParam = searchParams.get("unit") as Unit;
+    const barTypeParam = searchParams.get("barType") as BarType;
+
+    if (weight && unitParam && barTypeParam) {
+      setTargetWeight(weight);
+      setUnit(unitParam);
+      setBarType(barTypeParam);
+
+      const weightNum = parseFloat(weight);
+      if (weightNum > 0) {
+        const calculatedPlates = calculatePlates(
+          weightNum,
+          unitParam,
+          barTypeParam
+        );
+        setPlates(calculatedPlates);
+        setShowResult(true);
+      }
+    }
+  }, [searchParams]);
 
   const calculatePlates = (weight: number, unit: Unit, barType: BarType) => {
     // Standard Olympic bar weights
@@ -134,6 +162,14 @@ export default function BarbellCalculator() {
     setBarType(calculation.barType);
     setPlates(calculation.plates);
     setShowResult(true);
+
+    // Update URL to reflect the loaded calculation
+    const params = new URLSearchParams({
+      weight: calculation.targetWeight,
+      unit: calculation.unit,
+      barType: calculation.barType,
+    });
+    router.push(`/?${params.toString()}`, { scroll: false });
   };
 
   const clearRecentCalculations = () => {
@@ -163,6 +199,14 @@ export default function BarbellCalculator() {
       setPlates(calculatedPlates);
       setShowResult(true);
       addToRecentCalculations(targetWeight, unit, barType, calculatedPlates);
+
+      // Update URL with the calculation parameters
+      const params = new URLSearchParams({
+        weight: targetWeight,
+        unit: unit,
+        barType: barType,
+      });
+      router.push(`/?${params.toString()}`, { scroll: false });
     }
   };
 
@@ -170,6 +214,9 @@ export default function BarbellCalculator() {
     setTargetWeight("");
     setShowResult(false);
     setPlates([]);
+
+    // Clear URL parameters and go back to base URL
+    router.push("/", { scroll: false });
   };
 
   if (showResult) {
