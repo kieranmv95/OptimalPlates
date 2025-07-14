@@ -129,7 +129,7 @@ export default function BarbellCalculator() {
               onClick={() => setUnit("kg")}
               className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-colors ${
                 unit === "kg"
-                  ? "bg-blue-600 text-white"
+                  ? "bg-green-600 text-white"
                   : "bg-gray-600 text-gray-300 hover:bg-gray-500"
               }`}
             >
@@ -181,7 +181,7 @@ export default function BarbellCalculator() {
               onClick={() => setBarType("male")}
               className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-colors ${
                 barType === "male"
-                  ? "bg-purple-600 text-white"
+                  ? "bg-green-600 text-white"
                   : "bg-gray-600 text-gray-300 hover:bg-gray-500"
               }`}
             >
@@ -192,7 +192,7 @@ export default function BarbellCalculator() {
               onClick={() => setBarType("female")}
               className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-colors ${
                 barType === "female"
-                  ? "bg-pink-600 text-white"
+                  ? "bg-green-600 text-white"
                   : "bg-gray-600 text-gray-300 hover:bg-gray-500"
               }`}
             >
