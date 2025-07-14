@@ -89,7 +89,7 @@ export default function BarbellVisualization({
 
         {/* Weight Display */}
         <div className="text-center mt-6">
-          <div className="text-2xl font-bold text-white">
+          <div className="text-xl font-bold text-white">
             Total Weight: {displayWeight.toFixed(1)} {unit}
           </div>
           <div className="text-gray-300">
