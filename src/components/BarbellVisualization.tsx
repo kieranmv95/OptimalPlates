@@ -33,6 +33,56 @@ export default function BarbellVisualization({
   const displayWeight = unit === "kg" ? totalWeight : totalWeightLbs;
   const displayBarWeight = unit === "kg" ? barWeight : barWeightLbs;
 
+  // Calculate bending effect - convert to kg for consistent calculation
+  const weightInKg = unit === "kg" ? totalWeight : totalWeight / 2.20462;
+  const bendThreshold = 200; // kg
+  const bendAmount = weightInKg > bendThreshold ? 6 : 0; // Fixed 8 degree bend when over 200kg
+
+  // Create curved path for bent barbell
+  const barWidth = 96; // w-24 = 96px
+  const barHeight = 8; // h-2 = 8px
+  const curveHeight = bendAmount * 2; // Convert degrees to pixels
+
+  const createBentBar = () => {
+    if (bendAmount === 0) {
+      return (
+        <div className="flex items-center">
+          <div className="w-2 h-4 bg-gray-600"></div>
+          <div className="w-24 h-2 bg-gray-600 mx-1"></div>
+          <div className="w-2 h-4 bg-gray-600"></div>
+        </div>
+      );
+    }
+
+    return (
+      <div className="flex items-center">
+        <div className="w-2 h-4 bg-gray-600"></div>
+        <div
+          className="relative mx-1"
+          style={{ width: barWidth, height: barHeight }}
+        >
+          <svg
+            width={barWidth}
+            height={barHeight + curveHeight}
+            viewBox={`0 0 ${barWidth} ${barHeight + curveHeight}`}
+            className="absolute rotate-180 top-[-12px]"
+          >
+            <path
+              d={`M 0 ${barHeight / 2} Q ${barWidth / 2} ${
+                barHeight / 2 + curveHeight
+              } ${barWidth} ${barHeight / 2}`}
+              stroke="#6B7280"
+              strokeWidth={barHeight}
+              fill="none"
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+        <div className="w-2 h-4 bg-gray-600"></div>
+      </div>
+    );
+  };
+
   return (
     <div className="space-y-6">
       {/* Barbell Visualization */}
@@ -61,11 +111,7 @@ export default function BarbellVisualization({
           </div>
 
           {/* Barbell Bar */}
-          <div className="flex items-center">
-            <div className="w-2 h-4 bg-gray-600"></div>
-            <div className="w-24 h-2 bg-gray-600 mx-1"></div>
-            <div className="w-2 h-4 bg-gray-600"></div>
-          </div>
+          {createBentBar()}
 
           {/* Right Plates Stack - Same order as left (heaviest inside) */}
           <div className="flex items-center space-x-[2px]">
@@ -96,6 +142,11 @@ export default function BarbellVisualization({
             Bar: {displayBarWeight} {unit} | Plates:{" "}
             {(displayWeight - displayBarWeight).toFixed(1)} {unit}
           </div>
+          {bendAmount > 0 && (
+            <div className="mt-2 text-orange-400 text-sm font-medium">
+              💪 Barbell is bending! 💪
+            </div>
+          )}
         </div>
       </div>
 
