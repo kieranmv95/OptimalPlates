@@ -108,7 +108,7 @@ export default function DownloadPage() {
                 <div className="aspect-[9/16] bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden border border-purple-500/20">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10"></div>
                   <img
-                    src="/1.png"
+                    src="/1.PNG"
                     alt="Main Calculator Interface Screenshot"
                     className="relative z-10 rounded-2xl object-cover w-full h-full"
                     style={{ maxHeight: "100%", maxWidth: "100%" }}
