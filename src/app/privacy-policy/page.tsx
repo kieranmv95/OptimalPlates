@@ -22,7 +22,7 @@ export default function PrivacyPolicyPage() {
           Optimal Plates does not share your data with any third-party services.
         </p>
 
-        <h2>Children’s Privacy</h2>
+        <h2>Children&apos;s Privacy</h2>
         <p>Optimal Plates is not intended for children under 4.</p>
 
         <h2>Changes to This Policy</h2>
