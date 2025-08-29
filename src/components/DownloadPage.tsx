@@ -16,7 +16,7 @@ export default function DownloadPage() {
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
             <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-            Available soon on App Store & Google Play
+            Available now on App Store & coming soon to Google Play
           </div>
 
           <h1 className="text-6xl md:text-8xl font-black text-white mb-6 leading-tight">
