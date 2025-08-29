@@ -118,8 +118,8 @@ export default function DownloadPage() {
                   Simple Calculation
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  No need to go to a weightlifting site, just input what you
-                  want to lift, and we&apos;ll do the rest
+                  Input what your barbell type and weight, and we&apos;ll do the
+                  rest
                 </p>
               </div>
             </div>
@@ -253,8 +253,8 @@ export default function DownloadPage() {
                 Simple Calculation
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                No need to go to a weightlifting site, just input what you want
-                to lift, and we&apos;ll do the rest
+                Input what your barbell type and weight, and we&apos;ll do the
+                rest
               </p>
             </div>
           </div>
