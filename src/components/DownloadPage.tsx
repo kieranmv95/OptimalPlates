@@ -99,6 +99,9 @@ export default function DownloadPage() {
               Beautiful, intuitive, and powerful - just like your workouts
               should be
             </p>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Here&apos;s a look at the app in action
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -118,8 +121,8 @@ export default function DownloadPage() {
                   Simple Calculation
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Input what your barbell type and weight, and we&apos;ll do the
-                  rest
+                  Input what your barbell type and weight, configure your
+                  plates, and we&apos;ll do the rest
                 </p>
               </div>
             </div>
@@ -158,10 +161,12 @@ export default function DownloadPage() {
                     style={{ maxHeight: "100%", maxWidth: "100%" }}
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">Save</h3>
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  Breakdowns
+                </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Save your recent calculations and favorite plate combinations
-                  for easy access
+                  Get Percentage & Wendler breakdowns to use to plan out your
+                  gym sessions from your calculated lift total
                 </p>
               </div>
             </div>
@@ -182,80 +187,260 @@ export default function DownloadPage() {
               Built by lifters, for lifters. No more mental math, no more wasted
               time.
             </p>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Everything you need for fast, accurate, and beautiful barbell
+              math.
+            </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="group text-center">
-              <div className="w-24 h-24 bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="flex items-start gap-4 bg-gradient-to-br from-purple-900/30 to-pink-900/20 rounded-2xl p-6 border border-purple-400/10 shadow-lg">
+              <span className="mt-1 text-purple-400">
                 <svg
-                  className="w-12 h-12 text-white"
+                  className="w-7 h-7"
                   fill="none"
                   stroke="currentColor"
+                  strokeWidth={2.2}
                   viewBox="0 0 24 24"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-3">KG Support</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Currently supports KG plates. LBS support is in development!
-              </p>
-            </div>
-
-            <div className="group text-center">
-              <div className="w-24 h-24 bg-gradient-to-br from-green-600 to-yellow-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg
-                  className="w-12 h-12 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
                     d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
                   />
                 </svg>
+              </span>
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-1">
+                  Simple Calculation
+                </h4>
+                <p className="text-gray-300 text-sm">
+                  Enter your barbell and plates, get the perfect setup
+                  instantly.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">
-                One time payment
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                We all have enough subscriptions as it is, so no subscriptions,
-                no ads, all future updates and features are included in the one
-                time payment.
-              </p>
             </div>
-
-            <div className="group text-center">
-              <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="flex items-start gap-4 bg-gradient-to-br from-blue-900/30 to-cyan-900/20 rounded-2xl p-6 border border-blue-400/10 shadow-lg">
+              <span className="mt-1 text-cyan-400">
                 <svg
-                  className="w-12 h-12 text-white"
+                  className="w-7 h-7"
                   fill="none"
                   stroke="currentColor"
+                  strokeWidth={2.2}
                   viewBox="0 0 24 24"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                    d="M17 9V7a5 5 0 00-10 0v2M5 9h14v10a2 2 0 01-2 2H7a2 2 0 01-2-2V9z"
                   />
                 </svg>
+              </span>
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-1">
+                  Percentages &amp; Wendler Breakdown
+                </h4>
+                <p className="text-gray-300 text-sm">
+                  See your working sets and percentages, including Wendler 5/3/1
+                  breakdowns.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">
-                Simple Calculation
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                Input what your barbell type and weight, and we&apos;ll do the
-                rest
-              </p>
+            </div>
+            <div className="flex items-start gap-4 bg-gradient-to-br from-green-900/30 to-yellow-900/20 rounded-2xl p-6 border border-green-400/10 shadow-lg">
+              <span className="mt-1 text-yellow-400">
+                <svg
+                  className="w-7 h-7"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.2}
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </span>
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-1">
+                  Save Calculations
+                </h4>
+                <p className="text-gray-300 text-sm">
+                  Bookmark your favorite setups for quick access next time.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 bg-gradient-to-br from-pink-900/30 to-purple-900/20 rounded-2xl p-6 border border-pink-400/10 shadow-lg">
+              <span className="mt-1 text-pink-400">
+                <svg
+                  className="w-7 h-7"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.2}
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"
+                  />
+                </svg>
+              </span>
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-1">
+                  Quick Increment/Decrement
+                </h4>
+                <p className="text-gray-300 text-sm">
+                  Adjust your target weight with a tap for fast changes between
+                  sets.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 bg-gradient-to-br from-yellow-900/30 to-green-900/20 rounded-2xl p-6 border border-yellow-400/10 shadow-lg">
+              <span className="mt-1 text-green-400">
+                <svg
+                  className="w-7 h-7"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.2}
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 6v6l4 2"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth={2.2}
+                    fill="none"
+                  />
+                </svg>
+              </span>
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-1">
+                  Custom Plates Setup
+                </h4>
+                <p className="text-gray-300 text-sm">
+                  Configure your own plate inventory for truly accurate
+                  calculations.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 bg-gradient-to-br from-gray-900/30 to-gray-800/20 rounded-2xl p-6 border border-gray-400/10 shadow-lg">
+              <span className="mt-1 text-white">
+                <svg
+                  className="w-7 h-7"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.2}
+                  viewBox="0 0 24 24"
+                >
+                  <rect
+                    x="3"
+                    y="3"
+                    width="18"
+                    height="18"
+                    rx="4"
+                    stroke="currentColor"
+                    strokeWidth={2.2}
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M8 7h8M8 11h8M8 15h4"
+                  />
+                </svg>
+              </span>
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-1">
+                  Beautiful UI
+                </h4>
+                <p className="text-gray-300 text-sm">
+                  Modern, intuitive, and easy to use—looks great in the gym or
+                  at home.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 bg-gradient-to-br from-red-900/30 to-pink-900/20 rounded-2xl p-6 border border-red-400/10 shadow-lg col-span-1 md:col-span-2 lg:col-span-1">
+              <span className="mt-1 text-red-400">
+                <svg
+                  className="w-7 h-7"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.2}
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                  />
+                </svg>
+              </span>
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-1">
+                  One Time Payment, No Subs
+                </h4>
+                <p className="text-gray-300 text-sm">
+                  No subscriptions, no ads. All features and updates included
+                  forever.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 bg-gradient-to-br from-blue-900/30 to-cyan-900/20 rounded-2xl p-6 border border-blue-400/10 shadow-lg">
+              <span className="mt-1 text-blue-400">
+                <svg
+                  className="w-7 h-7"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.2}
+                  viewBox="0 0 24 24"
+                >
+                  <rect
+                    x="2"
+                    y="7"
+                    width="4"
+                    height="10"
+                    rx="1"
+                    stroke="currentColor"
+                    strokeWidth={2.2}
+                  />
+                  <rect
+                    x="18"
+                    y="7"
+                    width="4"
+                    height="10"
+                    rx="1"
+                    stroke="currentColor"
+                    strokeWidth={2.2}
+                  />
+                  <rect
+                    x="7"
+                    y="11"
+                    width="10"
+                    height="2"
+                    rx="1"
+                    stroke="currentColor"
+                    strokeWidth={2.2}
+                  />
+                </svg>
+              </span>
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-1">
+                  KG Support
+                </h4>
+                <p className="text-gray-300 text-sm">
+                  Calculate with KG plates for international standards.
+                  <br />
+                  <span className="text-gray-400 italic">
+                    LBS support coming soon!
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -276,15 +461,6 @@ export default function DownloadPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <div className="group text-center bg-gradient-to-br from-yellow-900/30 to-green-900/20 rounded-2xl p-8 border border-yellow-400/10 hover:scale-105 transition-transform duration-300 shadow-lg">
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Plate Selection
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                Customize which plates you own for accurate calculations, no
-                more guessing!
-              </p>
-            </div>
             <div className="group text-center bg-gradient-to-br from-blue-900/30 to-cyan-900/20 rounded-2xl p-8 border border-blue-400/10 hover:scale-105 transition-transform duration-300 shadow-lg">
               <h3 className="text-2xl font-bold text-white mb-2">
                 LBS Support
@@ -300,13 +476,6 @@ export default function DownloadPage() {
               <p className="text-gray-300 leading-relaxed">
                 We listen! Suggest features and help shape the app, your
                 feedback drives development.
-              </p>
-            </div>
-            <div className="group text-center bg-gradient-to-br from-red-900/30 to-orange-900/20 rounded-2xl p-8 border border-red-400/10 hover:scale-105 transition-transform duration-300 shadow-lg">
-              <h3 className="text-2xl font-bold text-white mb-2">Bug Fixes</h3>
-              <p className="text-gray-300 leading-relaxed">
-                We’re squashing bugs and improving stability, thanks for your
-                patience and reports!
               </p>
             </div>
           </div>
