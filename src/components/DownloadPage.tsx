@@ -108,12 +108,11 @@ export default function DownloadPage() {
             {/* Screenshot 1 */}
             <div className="group relative">
               <div className="relative bg-gradient-to-br from-purple-600/20 to-pink-600/20 backdrop-blur-xl rounded-3xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:scale-105">
-                <div className="aspect-[9/16] bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden border border-purple-500/20">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10"></div>
+                <div className="aspect-[9/16] rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden">
                   <img
-                    src="/1.PNG"
+                    src="/OP3.png"
                     alt="Main Calculator Interface Screenshot"
-                    className="relative z-10 rounded-2xl object-cover w-full h-full"
+                    className="relative z-10 rounded-2xl object-contain w-full h-full"
                     style={{ maxHeight: "100%", maxWidth: "100%" }}
                   />
                 </div>
@@ -130,12 +129,11 @@ export default function DownloadPage() {
             {/* Screenshot 2 */}
             <div className="group relative">
               <div className="relative bg-gradient-to-br from-blue-600/20 to-cyan-600/20 backdrop-blur-xl rounded-3xl p-8 border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 hover:scale-105">
-                <div className="aspect-[9/16] bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden border border-purple-500/20">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10"></div>
+                <div className="aspect-[9/16] rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden">
                   <img
-                    src="/2.PNG"
+                    src="/OP1.png"
                     alt="Main Calculator Interface Screenshot"
-                    className="relative z-10 rounded-2xl object-cover w-full h-full"
+                    className="relative z-10 rounded-2xl object-contain w-full h-full"
                     style={{ maxHeight: "100%", maxWidth: "100%" }}
                   />
                 </div>
@@ -152,12 +150,11 @@ export default function DownloadPage() {
             {/* Screenshot 3 */}
             <div className="group relative">
               <div className="relative bg-gradient-to-br from-green-600/20 to-yellow-600/20 backdrop-blur-xl rounded-3xl p-8 border border-green-500/20 hover:border-green-500/40 transition-all duration-300 hover:scale-105">
-                <div className="aspect-[9/16] bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden border border-purple-500/20">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10"></div>
+                <div className="aspect-[9/16] rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden">
                   <img
-                    src="/3.PNG"
+                    src="/OP2.png"
                     alt="Main Calculator Interface Screenshot"
-                    className="relative z-10 rounded-2xl object-cover w-full h-full"
+                    className="relative z-10 rounded-2xl object-contain w-full h-full"
                     style={{ maxHeight: "100%", maxWidth: "100%" }}
                   />
                 </div>
