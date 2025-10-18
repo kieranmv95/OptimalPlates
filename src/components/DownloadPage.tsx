@@ -1,6 +1,18 @@
 "use client";
 
 import { DownloadButtons } from "./DownloadButtons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCalculator,
+  faPalette,
+  faScaleBalanced,
+  faBookBookmark,
+  faRunning,
+  faCog,
+  faWeightHanging,
+  faPoundSign,
+  faFlag,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function DownloadPage() {
   return (
@@ -14,11 +26,6 @@ export default function DownloadPage() {
       <div className="relative z-10 container mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-            Available now on App Store & coming soon to Google Play
-          </div>
-
           <h1 className="text-6xl md:text-8xl font-black text-white mb-6 leading-tight">
             <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent">
               Optimal
@@ -30,10 +37,12 @@ export default function DownloadPage() {
           </h1>
 
           <p className="text-2xl md:text-3xl text-gray-300 mb-10 max-w-4xl mx-auto leading-relaxed">
-            The ultimate plate calculator for your gym sessions.
+            High quality gym tools for every session.
           </p>
 
-          <DownloadButtons />
+          <div className="mb-16">
+            <DownloadButtons />
+          </div>
 
           {/* Social Proof */}
           <div className="flex flex-wrap justify-center items-center gap-8 text-gray-400">
@@ -51,7 +60,7 @@ export default function DownloadPage() {
                   />
                 </svg>
               </div>
-              <span className="text-sm font-medium">Community Driven</span>
+              <span className="text-sm font-medium">Supports 5 Languages</span>
             </div>
             <div className="flex items-center gap-2">
               <svg
@@ -110,18 +119,18 @@ export default function DownloadPage() {
               <div className="relative bg-gradient-to-br from-purple-600/20 to-pink-600/20 backdrop-blur-xl rounded-3xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:scale-105">
                 <div className="aspect-[9/16] rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden">
                   <img
-                    src="/OP3.png"
+                    src="/home.png"
                     alt="Main Calculator Interface Screenshot"
                     className="relative z-10 rounded-2xl object-contain w-full h-full"
                     style={{ maxHeight: "100%", maxWidth: "100%" }}
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">
-                  Simple Calculation
+                <h3 className="text-2xl font-bold text-white mb-3 text-center">
+                  The right tool for the job
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Input what your barbell type and weight, configure your
-                  plates, and we&apos;ll do the rest
+                <p className="text-gray-300 leading-relaxed text-center">
+                  Get the right tool for the job with a simple, intuitive UI.
+                  And more tools in the pipeline coming soon!
                 </p>
               </div>
             </div>
@@ -131,16 +140,16 @@ export default function DownloadPage() {
               <div className="relative bg-gradient-to-br from-blue-600/20 to-cyan-600/20 backdrop-blur-xl rounded-3xl p-8 border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 hover:scale-105">
                 <div className="aspect-[9/16] rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden">
                   <img
-                    src="/OP1.png"
+                    src="/calc.png"
                     alt="Main Calculator Interface Screenshot"
                     className="relative z-10 rounded-2xl object-contain w-full h-full"
                     style={{ maxHeight: "100%", maxWidth: "100%" }}
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">
-                  Visual Display
+                <h3 className="text-2xl font-bold text-white mb-3 text-center">
+                  Simple UI
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-300 leading-relaxed text-center">
                   See exactly how your plates should be arranged on the barbell
                   in a nice visual display
                 </p>
@@ -152,16 +161,16 @@ export default function DownloadPage() {
               <div className="relative bg-gradient-to-br from-green-600/20 to-yellow-600/20 backdrop-blur-xl rounded-3xl p-8 border border-green-500/20 hover:border-green-500/40 transition-all duration-300 hover:scale-105">
                 <div className="aspect-[9/16] rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden">
                   <img
-                    src="/OP2.png"
+                    src="/breakdown.png"
                     alt="Main Calculator Interface Screenshot"
                     className="relative z-10 rounded-2xl object-contain w-full h-full"
                     style={{ maxHeight: "100%", maxWidth: "100%" }}
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">
+                <h3 className="text-2xl font-bold text-white mb-3 text-center">
                   Breakdowns
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-300 leading-relaxed text-center">
                   Get Percentage & Wendler breakdowns to use to plan out your
                   gym sessions from your calculated lift total
                 </p>
@@ -192,19 +201,7 @@ export default function DownloadPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="flex items-start gap-4 bg-gradient-to-br from-purple-900/30 to-pink-900/20 rounded-2xl p-6 border border-purple-400/10 shadow-lg">
               <span className="mt-1 text-purple-400">
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.2}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                  />
-                </svg>
+                <FontAwesomeIcon icon={faCalculator} className="w-7 h-7" />
               </span>
               <div>
                 <h4 className="text-lg font-semibold text-white mb-1">
@@ -218,19 +215,7 @@ export default function DownloadPage() {
             </div>
             <div className="flex items-start gap-4 bg-gradient-to-br from-blue-900/30 to-cyan-900/20 rounded-2xl p-6 border border-blue-400/10 shadow-lg">
               <span className="mt-1 text-cyan-400">
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.2}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17 9V7a5 5 0 00-10 0v2M5 9h14v10a2 2 0 01-2 2H7a2 2 0 01-2-2V9z"
-                  />
-                </svg>
+                <FontAwesomeIcon icon={faScaleBalanced} className="w-7 h-7" />
               </span>
               <div>
                 <h4 className="text-lg font-semibold text-white mb-1">
@@ -244,19 +229,7 @@ export default function DownloadPage() {
             </div>
             <div className="flex items-start gap-4 bg-gradient-to-br from-green-900/30 to-yellow-900/20 rounded-2xl p-6 border border-green-400/10 shadow-lg">
               <span className="mt-1 text-yellow-400">
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.2}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+                <FontAwesomeIcon icon={faBookBookmark} className="w-7 h-7" />
               </span>
               <div>
                 <h4 className="text-lg font-semibold text-white mb-1">
@@ -269,19 +242,7 @@ export default function DownloadPage() {
             </div>
             <div className="flex items-start gap-4 bg-gradient-to-br from-pink-900/30 to-purple-900/20 rounded-2xl p-6 border border-pink-400/10 shadow-lg">
               <span className="mt-1 text-pink-400">
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.2}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"
-                  />
-                </svg>
+                <FontAwesomeIcon icon={faRunning} className="w-7 h-7" />
               </span>
               <div>
                 <h4 className="text-lg font-semibold text-white mb-1">
@@ -295,27 +256,7 @@ export default function DownloadPage() {
             </div>
             <div className="flex items-start gap-4 bg-gradient-to-br from-yellow-900/30 to-green-900/20 rounded-2xl p-6 border border-yellow-400/10 shadow-lg">
               <span className="mt-1 text-green-400">
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.2}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 6v6l4 2"
-                  />
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth={2.2}
-                    fill="none"
-                  />
-                </svg>
+                <FontAwesomeIcon icon={faCog} className="w-7 h-7" />
               </span>
               <div>
                 <h4 className="text-lg font-semibold text-white mb-1">
@@ -329,28 +270,7 @@ export default function DownloadPage() {
             </div>
             <div className="flex items-start gap-4 bg-gradient-to-br from-gray-900/30 to-gray-800/20 rounded-2xl p-6 border border-gray-400/10 shadow-lg">
               <span className="mt-1 text-white">
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.2}
-                  viewBox="0 0 24 24"
-                >
-                  <rect
-                    x="3"
-                    y="3"
-                    width="18"
-                    height="18"
-                    rx="4"
-                    stroke="currentColor"
-                    strokeWidth={2.2}
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M8 7h8M8 11h8M8 15h4"
-                  />
-                </svg>
+                <FontAwesomeIcon icon={faPalette} className="w-7 h-7" />
               </span>
               <div>
                 <h4 className="text-lg font-semibold text-white mb-1">
@@ -364,19 +284,7 @@ export default function DownloadPage() {
             </div>
             <div className="flex items-start gap-4 bg-gradient-to-br from-red-900/30 to-pink-900/20 rounded-2xl p-6 border border-red-400/10 shadow-lg col-span-1 md:col-span-2 lg:col-span-1">
               <span className="mt-1 text-red-400">
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.2}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                  />
-                </svg>
+                <FontAwesomeIcon icon={faPoundSign} className="w-7 h-7" />
               </span>
               <div>
                 <h4 className="text-lg font-semibold text-white mb-1">
@@ -390,41 +298,7 @@ export default function DownloadPage() {
             </div>
             <div className="flex items-start gap-4 bg-gradient-to-br from-blue-900/30 to-cyan-900/20 rounded-2xl p-6 border border-blue-400/10 shadow-lg">
               <span className="mt-1 text-blue-400">
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.2}
-                  viewBox="0 0 24 24"
-                >
-                  <rect
-                    x="2"
-                    y="7"
-                    width="4"
-                    height="10"
-                    rx="1"
-                    stroke="currentColor"
-                    strokeWidth={2.2}
-                  />
-                  <rect
-                    x="18"
-                    y="7"
-                    width="4"
-                    height="10"
-                    rx="1"
-                    stroke="currentColor"
-                    strokeWidth={2.2}
-                  />
-                  <rect
-                    x="7"
-                    y="11"
-                    width="10"
-                    height="2"
-                    rx="1"
-                    stroke="currentColor"
-                    strokeWidth={2.2}
-                  />
-                </svg>
+                <FontAwesomeIcon icon={faWeightHanging} className="w-7 h-7" />
               </span>
               <div>
                 <h4 className="text-lg font-semibold text-white mb-1">
@@ -432,48 +306,21 @@ export default function DownloadPage() {
                 </h4>
                 <p className="text-gray-300 text-sm">
                   Calculate with KG plates for international standards.
-                  <br />
-                  <span className="text-gray-400 italic">
-                    LBS support coming soon!
-                  </span>
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* In Development*/}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-              What&apos;s{" "}
-              <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
-                in development?
+            <div className="flex items-start gap-4 bg-gradient-to-br from-amber-900/30 to-amber-900/20 rounded-2xl p-6 border border-blue-400/10 shadow-lg">
+              <span className="mt-1 text-blue-400">
+                <FontAwesomeIcon icon={faFlag} className="w-7 h-7" />
               </span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              We are working hard to bring you the best experience possible.
-              Some features are still in development.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <div className="group text-center bg-gradient-to-br from-blue-900/30 to-cyan-900/20 rounded-2xl p-8 border border-blue-400/10 hover:scale-105 transition-transform duration-300 shadow-lg">
-              <h3 className="text-2xl font-bold text-white mb-2">
-                LBS Support
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                Pounds are coming soon! Currently, only KG plates are supported.
-              </p>
-            </div>
-            <div className="group text-center bg-gradient-to-br from-pink-900/30 to-purple-900/20 rounded-2xl p-8 border border-pink-400/10 hover:scale-105 transition-transform duration-300 shadow-lg">
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Community Features
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                We listen! Suggest features and help shape the app, your
-                feedback drives development.
-              </p>
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-1">
+                  Multi-Language Support
+                </h4>
+                <p className="text-gray-300 text-sm">
+                  Now in English, German, Spanish, Japanese, French & Arabic
+                </p>
+              </div>
             </div>
           </div>
         </div>
