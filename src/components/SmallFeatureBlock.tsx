@@ -83,14 +83,21 @@ export const SmallFeatureBlock = ({
 
   return (
     <div
-      className={`flex items-start gap-4 bg-gradient-to-br from-teal-900/30 to-blue-900/20 rounded-2xl p-6 border border-pink-400/10 shadow-lg ${randomColour.backgroundColor}`}
+      className={`group flex items-start gap-4 ${randomColour.backgroundColor} rounded-2xl p-6 border border-white/5 backdrop-blur-sm shadow-lg hover:shadow-xl hover:border-white/10 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1`}
     >
-      <span className={`mt-1 ${randomColour.color}`}>
-        <FontAwesomeIcon icon={icon} className="w-7 h-7" />
-      </span>
-      <div>
-        <h4 className="text-lg font-semibold text-white mb-1">{title}</h4>
-        <p className="text-gray-300 text-sm">{description}</p>
+      <div
+        className={`mt-1 p-3 rounded-xl bg-gradient-to-br ${randomColour.backgroundColor} border border-white/10 group-hover:scale-110 transition-transform duration-300`}
+      >
+        <FontAwesomeIcon
+          icon={icon}
+          className={`w-6 h-6 ${randomColour.color}`}
+        />
+      </div>
+      <div className="flex-1">
+        <h4 className="text-lg font-bold text-white mb-2 leading-tight">
+          {title}
+        </h4>
+        <p className="text-gray-300 text-sm leading-relaxed">{description}</p>
       </div>
     </div>
   );
