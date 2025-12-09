@@ -16,6 +16,17 @@ export const DownloadButtons = () => {
         </span>
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
       </a>
+      <div className="relative px-8 py-5 bg-gradient-to-r from-gray-400 to-gray-500 text-white font-bold rounded-2xl text-lg opacity-75 cursor-not-allowed">
+        <span className="flex items-center gap-2 relative z-10">
+          <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997 0-.5511.4482-.9993.9993-.9993.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997 0-.5511.4482-.9993.9993-.9993.551 0 .9993.4482.9993.9993 0 .5511-.4483.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1349 1.0987L4.8429 5.4465a.4161.4161 0 00-.5676-.1521.416.416 0 00-.1521.5676l1.9973 3.4592C2.6889 11.186.8532 13.0817.8532 15.3414c0 .8546.6959 1.5511 1.5511 1.5511h18.7914c.8546 0 1.5511-.6965 1.5511-1.5511 0-2.2597-1.8357-4.1554-4.8291-5.02" />
+          </svg>
+          Google Play
+          <span className="text-xs bg-white/20 px-1.5 py-0.5 rounded-md">
+            Coming Soon
+          </span>
+        </span>
+      </div>
     </div>
   );
 };
