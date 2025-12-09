@@ -10,12 +10,12 @@ export default function Home() {
           <p className="text-gray-400 text-sm">
             Made by{" "}
             <a
-              href="https://instagram.com/temperedstrength"
+              href="https://instagram.com/optimalplates"
               target="_blank"
               rel="noopener noreferrer"
               className="text-purple-400 hover:text-purple-300 transition-colors font-medium"
             >
-              Tempered Strength
+              Optimal Plates
             </a>
           </p>
         </div>
