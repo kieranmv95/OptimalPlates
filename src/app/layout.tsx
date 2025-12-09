@@ -44,11 +44,15 @@ export const metadata: Metadata = {
     type: "website",
   },
   metadataBase: new URL("https://optimalplates.com"),
+  themeColor: "#000000",
   viewport: {
     width: "device-width",
     initialScale: 1,
     maximumScale: 1,
     userScalable: false,
+  },
+  other: {
+    "apple-mobile-web-app-status-bar-style": "black",
   },
 };
 
