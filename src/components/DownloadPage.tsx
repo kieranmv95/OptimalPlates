@@ -37,7 +37,7 @@ export default function DownloadPage() {
           </h1>
 
           <p className="text-2xl md:text-3xl text-gray-300 mb-10 max-w-4xl mx-auto leading-relaxed">
-            High quality gym tools for every session.
+            High quality gym tracking &amp; tools for every session.
           </p>
 
           <div className="mb-16">
@@ -119,7 +119,7 @@ export default function DownloadPage() {
               <div className="relative bg-gradient-to-br from-purple-600/20 to-pink-600/20 backdrop-blur-xl rounded-3xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:scale-105">
                 <div className="aspect-[9/16] rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden">
                   <img
-                    src="/home.png"
+                    src="/screens/lightdarksplit.png"
                     alt="Main Calculator Interface Screenshot"
                     className="relative z-10 rounded-2xl object-contain w-full h-full"
                     style={{ maxHeight: "100%", maxWidth: "100%" }}
@@ -140,7 +140,7 @@ export default function DownloadPage() {
               <div className="relative bg-gradient-to-br from-blue-600/20 to-cyan-600/20 backdrop-blur-xl rounded-3xl p-8 border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 hover:scale-105">
                 <div className="aspect-[9/16] rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden">
                   <img
-                    src="/calc.png"
+                    src="/screens/calc.png"
                     alt="Main Calculator Interface Screenshot"
                     className="relative z-10 rounded-2xl object-contain w-full h-full"
                     style={{ maxHeight: "100%", maxWidth: "100%" }}
@@ -161,7 +161,7 @@ export default function DownloadPage() {
               <div className="relative bg-gradient-to-br from-green-600/20 to-yellow-600/20 backdrop-blur-xl rounded-3xl p-8 border border-green-500/20 hover:border-green-500/40 transition-all duration-300 hover:scale-105">
                 <div className="aspect-[9/16] rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden">
                   <img
-                    src="/breakdown.png"
+                    src="/screens/breakdown.png"
                     alt="Main Calculator Interface Screenshot"
                     className="relative z-10 rounded-2xl object-contain w-full h-full"
                     style={{ maxHeight: "100%", maxWidth: "100%" }}
