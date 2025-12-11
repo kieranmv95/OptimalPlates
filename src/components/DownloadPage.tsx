@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { DownloadButtons } from "./DownloadButtons";
 import {
   faCalculator,
@@ -15,6 +16,7 @@ import {
   faDumbbell,
   faWrench,
   faCircleCheck,
+  faMap,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SmallFeatureBlock } from "./SmallFeatureBlock";
@@ -153,6 +155,25 @@ export default function DownloadPage() {
                 One time payment, no subscriptions
               </span>
             </div>
+          </div>
+
+          {/* Roadmap CTA */}
+          <div className="mt-10 sm:mt-12">
+            <Link
+              href="/roadmap"
+              className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/50 hover:bg-purple-500/10 text-white font-medium rounded-full transition-all duration-300 group"
+            >
+              <FontAwesomeIcon
+                icon={faMap}
+                className="w-5 h-5 text-purple-400"
+              />
+              <span>
+                See what&apos;s coming next →{" "}
+                <span className="text-purple-400 group-hover:text-purple-300">
+                  View Roadmap
+                </span>
+              </span>
+            </Link>
           </div>
         </div>
 
