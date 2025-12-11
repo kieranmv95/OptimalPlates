@@ -18,6 +18,7 @@ import {
   faBan,
   faHeart,
   faArrowLeft,
+  faWeightHanging,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
@@ -98,6 +99,15 @@ const roadmapItems = [
     gradient: "from-indigo-900/30 to-violet-900/20",
     iconColor: "text-indigo-400",
     borderColor: "border-indigo-500/30",
+  },
+  {
+    number: 8,
+    title: "LBS Support",
+    description: "Support for pounds (lbs) as a unit of measurement.",
+    icon: faWeightHanging,
+    gradient: "from-orange-900/30 to-red-900/20",
+    iconColor: "text-orange-400",
+    borderColor: "border-orange-500/30",
   },
 ];
 
