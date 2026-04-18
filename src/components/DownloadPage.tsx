@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { DownloadButtons } from "./DownloadButtons";
+import { TemperedStrengthFlagshipBanner } from "./TemperedStrengthFlagshipBanner";
 import {
   faCalculator,
   faPalette,
@@ -11,12 +11,10 @@ import {
   faRunning,
   faCog,
   faWeightHanging,
-  faPoundSign,
+  faGift,
   faFlag,
   faDumbbell,
-  faWrench,
   faCircleCheck,
-  faMap,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SmallFeatureBlock } from "./SmallFeatureBlock";
@@ -31,7 +29,7 @@ const features = [
     icon: faCalculator,
     title: "Simple Calculation",
     description:
-      "Enter your barbell and plates, get the perfect setup instantly.",
+      "Enter your barbell and plates in kg or lbs, get the perfect setup instantly.",
   },
   {
     icon: faScaleBalanced,
@@ -63,25 +61,21 @@ const features = [
       "Modern, intuitive, and easy to use—looks great in the gym or at home.",
   },
   {
-    icon: faPoundSign,
-    title: "One Time Payment, No Subs",
+    icon: faGift,
+    title: "100% Free",
     description:
-      "No subscriptions, no ads. All features and updates included forever.",
+      "No subscriptions, no ads. Every feature and update at no cost.",
   },
   {
     icon: faWeightHanging,
-    title: "KG Support",
-    description: "Calculate with KG plates for international standards.",
+    title: "KG & LBS support",
+    description:
+      "Switch between kilograms and pounds so your numbers match the plates on your bar, wherever you train.",
   },
   {
     icon: faFlag,
     title: "Multi-Language Support",
     description: "Now in English, German, Spanish, Japanese, French & Arabic",
-  },
-  {
-    icon: faWrench,
-    title: "More Tools Coming Soon",
-    description: "More tools coming soon to the app, stay tuned for updates",
   },
 ];
 
@@ -89,7 +83,7 @@ export default function DownloadPage() {
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
       {/* Enhanced gradient background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-600/25 via-pink-600/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
         <div
           className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-600/25 via-cyan-600/20 to-transparent rounded-full blur-3xl animate-pulse"
@@ -102,6 +96,8 @@ export default function DownloadPage() {
         {/* Subtle grid overlay for depth */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
       </div>
+
+      <TemperedStrengthFlagshipBanner />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         {/* Hero Section */}
@@ -120,10 +116,20 @@ export default function DownloadPage() {
             </h1>
           </div>
 
+          <div className="flex justify-center mb-6 sm:mb-8">
+            <span className="inline-flex items-center gap-2.5 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-emerald-500/25 via-green-500/20 to-cyan-500/25 border border-emerald-400/50 text-emerald-200 font-extrabold text-sm sm:text-base tracking-wide shadow-[0_0_40px_rgba(52,211,153,0.2)]">
+              <span className="relative flex h-2.5 w-2.5 shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400" />
+              </span>
+              100% FREE — full app, zero cost
+            </span>
+          </div>
+
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 sm:mb-10 max-w-3xl lg:max-w-4xl mx-auto leading-relaxed font-light">
             The ultimate barbell plate calculator and exercise tracker.
-            Calculate perfect plate setups, log your workouts, and track your
-            progress, all in one powerful app.
+            Calculate perfect plate setups in kg or lbs, log your workouts, and
+            track your progress — all free in one powerful app.
           </p>
 
           <div className="mb-12 sm:mb-16">
@@ -144,6 +150,13 @@ export default function DownloadPage() {
                 icon={faCircleCheck}
                 className="w-5 h-5 text-green-400"
               />
+              <span className="text-sm font-medium">KG &amp; LBS units</span>
+            </div>
+            <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
+              <FontAwesomeIcon
+                icon={faCircleCheck}
+                className="w-5 h-5 text-green-400"
+              />
               <span className="text-sm font-medium">Regular Updates</span>
             </div>
             <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
@@ -152,28 +165,9 @@ export default function DownloadPage() {
                 className="w-5 h-5 text-green-400"
               />
               <span className="text-sm font-medium">
-                One time payment, no subscriptions
+                100% free — no subscriptions
               </span>
             </div>
-          </div>
-
-          {/* Roadmap CTA */}
-          <div className="mt-10 sm:mt-12">
-            <Link
-              href="/roadmap"
-              className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/50 hover:bg-purple-500/10 text-white font-medium rounded-full transition-all duration-300 group"
-            >
-              <FontAwesomeIcon
-                icon={faMap}
-                className="w-5 h-5 text-purple-400"
-              />
-              <span>
-                See what&apos;s coming next →{" "}
-                <span className="text-purple-400 group-hover:text-purple-300">
-                  View Roadmap
-                </span>
-              </span>
-            </Link>
           </div>
         </div>
 
@@ -212,7 +206,6 @@ export default function DownloadPage() {
                 </h3>
                 <p className="text-gray-300 leading-relaxed text-center text-sm sm:text-base">
                   Get the right tool for the job with a simple, intuitive UI.
-                  And more tools in the pipeline coming soon!
                 </p>
               </div>
             </div>
@@ -283,7 +276,7 @@ export default function DownloadPage() {
             </p>
             <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
               Everything you need for fast, accurate, and beautiful barbell
-              math.
+              math — completely free.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
@@ -307,8 +300,8 @@ export default function DownloadPage() {
               </h2>
               <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed font-light">
                 Join thousands of lifters who&apos;ve already upgraded their gym
-                experience. Download Optimal Plates today and never struggle
-                with plate math again!
+                experience. Download Optimal Plates free from the App Store
+                today and never struggle with plate math again!
               </p>
 
               <DownloadButtons />

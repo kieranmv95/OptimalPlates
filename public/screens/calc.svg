@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1600" viewBox="0 0 900 1600" role="img" aria-label="Placeholder screenshot">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb" stop-opacity="0.35" />
+      <stop offset="0.55" stop-color="#06b6d4" stop-opacity="0.25" />
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0.22" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="1600" fill="#07070a" />
+  <rect x="36" y="36" width="828" height="1528" rx="56" fill="url(#bg)" />
+
+  <g fill="#000000" fill-opacity="0.30" stroke="#ffffff" stroke-opacity="0.10">
+    <rect x="120" y="220" width="660" height="120" rx="26" />
+    <rect x="120" y="380" width="660" height="120" rx="26" />
+    <rect x="120" y="540" width="660" height="640" rx="28" />
+    <rect x="120" y="1220" width="420" height="120" rx="26" />
+    <rect x="560" y="1220" width="220" height="120" rx="26" />
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" fill="#ffffff">
+    <text x="120" y="160" font-size="44" font-weight="700" opacity="0.92">Calculator</text>
+    <text x="120" y="1470" font-size="22" font-weight="500" opacity="0.70">Placeholder screenshot</text>
+  </g>
+</svg>

@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Optimal Plates – Barbell Plate Calculator App for Gym & Powerlifting",
   description:
-    "Optimal Plates is the ultimate barbell plate calculator app for lifters, powerlifters, and gym enthusiasts. Instantly calculate the perfect plate combination for your Olympic barbell in KG or LBS, visualize your setup, and optimize your workouts. Community-driven, no subscriptions, and coming soon to iOS and Android.",
+    "Optimal Plates is the ultimate barbell plate calculator app for lifters, powerlifters, and gym enthusiasts. Instantly calculate the perfect plate combination for your Olympic barbell in KG or LBS, visualize your setup, and optimize your workouts. Community-driven, completely free on iOS — no subscriptions, no ads.",
   keywords: [
     "barbell calculator",
     "plate calculator",
@@ -26,11 +26,12 @@ export const metadata: Metadata = {
     "barbell math",
     "Olympic barbell",
     "plate math",
+    "kg and lbs calculator",
     "strength training",
     "fitness app",
+    "free fitness app",
     "community driven",
     "iOS",
-    "Android",
     "Optimal Plates",
     "Tempered Strength",
   ],
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     title:
       "Optimal Plates – Barbell Plate Calculator App for Gym & Powerlifting",
     description:
-      "Calculate the perfect plate combination for your Olympic barbell. Visualize your setup, optimize your gym sessions, and join a community of lifters. No subscriptions, just one-time payment. Available soon on iOS and Android.",
+      "Calculate the perfect plate combination for your Olympic barbell in KG or LBS. Visualize your setup, optimize your gym sessions, and join a community of lifters. Completely free on iOS — no subscriptions, no ads.",
     url: "https://optimalplates.com",
     siteName: "Optimal Plates",
     type: "website",
